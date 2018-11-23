@@ -6,14 +6,16 @@
   </div>
 </div>
 <div class="content">
-  <ul>
-    <% @cocktails.each do |cocktail| %>
-    <li>
-      <%= link_to cocktail.name, cocktail_path(cocktail) %>
-      <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Delete?" } do %>
-      <i class="fa fa-trash destroy_dose"></i>
+  <div class="row">
+    <ul>
+      <% @cocktails.each do |cocktail| %>
+      <li>
+        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+        <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Delete?" } do %>
+        <!--  <%= image_tag "whisky.jpg", :width => "70px" %> -->
+        <i class="fa fa-trash destroy_dose"></i>
+        <% end %>
+      </li>
       <% end %>
-    </li>
-    <% end %>
-  </ul>
-</div>
+    </ul>
+  </div>
