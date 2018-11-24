@@ -5,17 +5,19 @@
     <%= link_to "Add cocktail", new_cocktail_path, class: 'btn btn-primary'%>
   </div>
 </div>
-<div class="content">
+<div class="container">
   <div class="row">
-    <ul>
+    <div class="row">
       <% @cocktails.each do |cocktail| %>
-      <li>
-        <%= link_to cocktail.name, cocktail_path(cocktail) %>
-        <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Delete?" } do %>
-        <!--  <%= image_tag "whisky.jpg", :width => "70px" %> -->
-        <i class="fa fa-trash destroy_dose"></i>
-        <% end %>
-      </li>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://cdn.liquor.com/wp-content/uploads/2016/07/14070101/aviation-720FB.jpg');">
+          <div class="card-description">
+            <h2><%= cocktail.name %></h2>
+          </div>
+          <%= link_to "", cocktail_path(cocktail), class: 'card-link' %>
+        </div>
+      </div>
       <% end %>
-    </ul>
+    </div>
   </div>
+</div>
